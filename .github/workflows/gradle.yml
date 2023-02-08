@@ -18,8 +18,11 @@ permissions:
 
 jobs:
   build:
-
+    
+    # 실행환경 지정
     runs-on: ubuntu-latest
+    
+    # 작업할 파일 디렉토리 설정
     env:
       working-directory: ./spring-demo
 
@@ -30,9 +33,25 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        
+    # gradelw 폴더에 대한 접근 권한 설정    
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
       working-directory: ${{ env.working-directory }}
+    
+    # Build
     - name: Build with Gradle
       run: ./gradlew build
       working-directory: ${{ env.working-directory }}
+    
+    # 전송할 파일을 담을 디렉토리 생성
+    - name: Make Directory for deliver
+      run: mkdir build-app
+      working-directory: ${{ env.working-directory }}
+      
+    # Jar File Copy
+    - name: Copy Jar
+      run: cp ./build/libs/*.jar ./build-app/
+      
+    
+    
