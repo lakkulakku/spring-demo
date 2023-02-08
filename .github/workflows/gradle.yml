@@ -21,7 +21,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./backend
+      working-directory: ./spring-demo/build-app
 
     steps:
     - uses: actions/checkout@v3
