@@ -49,9 +49,9 @@ jobs:
       run: mkdir build-app
       working-directory: ${{ env.working-directory }}
       
-    # Jar File Copy
-    - name: Copy Jar
-      run: cp ./build/libs/*.jar ./build-app/
+    # War File Copy
+    - name: Copy War
+      run: cp ./build/libs/*.war ./build-app/
       working-directory: ${{ env.working-directory }}
       
     
