@@ -48,11 +48,19 @@ jobs:
     - name: Make Directory for deliver
       run: mkdir build-app
       working-directory: ${{ env.working-directory }}
-      
-    # War File Copy
+  
+    # Copy War
     - name: Copy War
       run: cp ./build/libs/*.war ./build-app/
       working-directory: ${{ env.working-directory }}
-      
+  
+    # War Directory -> Zip
+    - name: Zip Directory
+      run: zip -r -qq -j ./spring-demo.zip ./build-app
+      working-directory: ${{ env.working-directory }}
     
-    
+    # War File Copy to Azure Server
+    - name: Copy War to Azure Server
+      run: scp ./spring-demo.zip juyoung@20.249.9.116:/home/juyoung/build-app/
+      working-directory: ${{ env.working-directory }}
+  
