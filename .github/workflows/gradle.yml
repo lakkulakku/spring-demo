@@ -28,4 +28,4 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - run: cd spring-demo && ./gradlew build
+    - run: cd spring-demo && chmod +x ./gradlew && ./gradlew build
