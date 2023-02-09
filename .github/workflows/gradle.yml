@@ -69,4 +69,4 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         source: "spring-demo/build/libs/*.war"
         target: "/home/juyoung/build-app/"
-        strip_components: 1
+        strip_components: 3
