@@ -61,6 +61,10 @@ jobs:
     
     # War File Copy to Azure Server
     - name: Copy War to Azure Server
-      run: scp ./spring-demo.zip juyoung@20.249.9.116:/home/juyoung/build-app/
-      working-directory: ${{ env.working-directory }}
-  
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }
+        source: "/spring-demo.zip"
+        target: "/home/juyoung/build-app"
