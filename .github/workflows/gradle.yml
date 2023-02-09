@@ -68,4 +68,4 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         port: ${{ secrets.SSH_PORT }}
         source: "./build/libs/*.war"
-        target: "home/juyoung/build-app"
+        target: "/home/juyoung/build-app"
