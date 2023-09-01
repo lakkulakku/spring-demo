@@ -48,13 +48,13 @@ jobs:
     
     # War File Copy to Azure Server
     # host, username, password, port는 github의 Settings > Secrets and variables 에서 키를 관리
-    - name: Copy War to Azure Server
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        port: ${{ secrets.SSH_PORT }}
-        source: "spring-demo/build/libs/*.war"
-        target: "/home/juyoung/build-app/"
-        strip_components: 3   # 소스코드 디렉토리 정리
+    # - name: Copy War to Azure Server
+    #   uses: appleboy/scp-action@master
+    #   with:
+    #     host: ${{ secrets.SSH_HOST }}
+    #     username: ${{ secrets.SSH_USERNAME }}
+    #     password: ${{ secrets.SSH_PASSWORD }}
+    #     port: ${{ secrets.SSH_PORT }}
+    #     source: "spring-demo/build/libs/*.war"
+    #     target: "/home/juyoung/build-app/"
+    #     strip_components: 3   # 소스코드 디렉토리 정리
